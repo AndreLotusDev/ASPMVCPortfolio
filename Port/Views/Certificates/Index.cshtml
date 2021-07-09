@@ -1,0 +1,155 @@
+﻿@{
+    ViewData["Title"] = "Certificacoes";
+}
+
+<link rel="stylesheet" href="~/css/Certificates/index.css" />
+
+<div class="columns is-vcentered">
+    <div id="introduction" class="column has-text-centered mt-6">
+
+        <div id="want_back_btn" class="is-hidden">
+            <a href="#info_sector">
+                <ion-icon class="mt-2" size="large" name="arrow-up-outline"></ion-icon>
+            </a>
+        </div>
+
+        <section id="info_sector">
+            <nav class="breadcrumb is-centered" aria-label="bredcrumb_certification" id="bredcrumb_certification_header">
+                <ul class="">
+                    <li><a href="#alura_container">Alura</a></li>
+                    <li><a href="#misc_start">Misc (Back & Architeture)</a></li>
+                    <li><a href="#design_start">Design</a></li>
+                </ul>
+            </nav>
+
+            @* Card alura *@
+            <section class="columns" id="alura_container">
+                <div class="container column is-6">
+                    <partial name="_Alura_Certificate" />
+                </div>
+            </section>
+
+            @* MISC *@
+
+            <div id="misc_start"></div>
+
+            <section class="columns">
+                <div class="container column is-6">
+                    <partial name="_DDD_Certificate" />
+                </div>
+            </section>
+
+            <section class="columns">
+                <div class="container column is-6">
+                    <partial name="_GOF_Certificate" />
+                </div>
+            </section>
+
+            <section class="columns">
+                <div class="container column is-6">
+                    <partial name="_GO_Certificate" />
+                </div>
+            </section>
+
+            <section class="columns">
+                <div class="container column is-6">
+                    <partial name="_ASP_MVC_Certificate" />
+                </div>
+            </section>
+
+            <section class="columns">
+                <div class="container column is-6">
+                    <partial name="_CSharp_Complete_Certificate" />
+                </div>
+            </section>
+
+            <section class="columns">
+                <div class="container column is-6">
+                    <partial name="_SQL_Complete_Certificate" />
+                </div>
+            </section>
+
+            <section class="columns">
+                <div class="container column is-6">
+                    <partial name="_Web_Develop_Certificate" />
+                </div>
+            </section>
+
+            <section class="columns">
+                <div class="container column is-6">
+                    <partial name="_UML_Certificate" />
+                </div>
+            </section>
+
+            <section class="columns">
+                <div class="container column is-6">
+                    <partial name="_CSharp_Certificate" />
+                </div>
+            </section>
+
+            <section class="columns">
+                <div class="container column is-6">
+                    <partial name="_Unity_Certificate" />
+                </div>
+            </section>
+
+            <section class="columns">
+                <div class="container column is-6">
+                    <partial name="_Unity_2D_Certificate" />
+                </div>
+            </section>
+
+            <section class="columns">
+                <div class="container column is-6">
+                    <partial name="_Java_Certificate" />
+                </div>
+            </section>
+
+            @* Design *@
+
+            <div id="design_start"></div>
+
+            <section class="columns">
+                <div class="container column is-6">
+                    <partial name="VUE_JS_Certificate" />
+                </div>
+            </section>
+
+            <section class="columns">
+                <div class="container column is-6">
+                    <partial name="_PS_Beginners_Certificate" />
+                </div>
+            </section>
+
+            <section class="columns">
+                <div class="container column is-6">
+                    <partial name="_PS_PT_Certificate" />
+                </div>
+            </section>
+        </section>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        $(document).scroll(function (e)
+        {
+            let verticalposition = window.scrollY;
+
+            if (verticalposition > 900)
+            {
+                let hasClassHidden = $("#want_back_btn").hasClass("is-hidden")
+
+                if (hasClassHidden)
+                    $("#want_back_btn").removeClass("is-hidden");
+            }
+            else
+            {
+                let hasClassHidden = $("#want_back_btn").hasClass("is-hidden")
+
+                if (!hasClassHidden)
+                    $("#want_back_btn").addClass("is-hidden");
+            }
+        })
+    </script>
+}

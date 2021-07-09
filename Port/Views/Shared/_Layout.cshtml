@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Port</title>
+    <link rel="stylesheet" href="~/css/var.css" />
+
+    <link rel="stylesheet" href="~/bulma/css/bulma.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/Layout/index.css" />
+
+</head>
+<body>
+    <header class="full-vw">
+        <nav class="navbar box" role="navigation" aria-label="main navigation" style="border-radius: 0px">
+            <div class="navbar-brand">
+
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navabar_container" class="navbar-menu">
+                <div class="navbar-start">
+                    @*<a class="navbar-item bar-right" href="/">
+                        Home
+                    </a>*@
+
+
+                    <a class="navbar-item bar-right" href="/WhoIAm">
+                        Quem sou eu?
+                    </a>
+
+                    <a class="navbar-item bar-right" href="/Works">
+                        Trabalhos
+                    </a>
+
+                    <a class="navbar-item bar-right" href="/Certificates">
+                        Certificações
+                    </a>
+                </div>
+
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <a class="button is-primary" id="btn_cv" asp-controller="Archives" asp-action="MyCvDownload">
+                                <strong>Currículo</strong>
+                            </a>
+
+                            <a class="button is-primary" id="btn_my_contact">
+                                <strong>Contato</strong>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div>
+        <div class="modal" id="modal_my_contact">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title has-text-centered">Contatos</p>
+                    <button class="delete" aria-label="close" id="contact_close_btn"></button>
+                </header>
+                <section class="modal-card-body has-text-centered">
+                    <h2>Esses são os meus contatos, caso tenha interesse em meu trabalho, só me contatar por estes meios: </h2>
+
+                    <section id="social_network" >
+
+                        <section id="social_network_link" class="columns is-center is-multiline pt-5">
+                            <a class="card column " href="https://www.linkedin.com/in/andregomes8866/" target="_blank">
+                                <ion-icon class="z1_5" name="logo-linkedin">
+                            </a>
+
+                            <a class="card column " href="https://wa.link/wcco8q" target="_blank">
+                                <ion-icon class="z1_5" name="logo-whatsapp"></ion-icon>
+                            </a>
+                        </section>
+
+                    </section>
+                </section>
+            </div>
+        </div>
+
+        <main role="main" class="" id="main_info">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="">
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+    <script>
+        $(document).ready(function ()
+        {
+            let modalContato = $("#modal_my_contact")
+
+            $("#btn_my_contact").click(function ()
+            {
+                $(modalContato).toggleClass("is-active")
+            })
+
+            $(".modal-background").click(function ()
+            {
+                $(modalContato).toggleClass("is-active")
+
+                console.log('modal-bg')
+            })
+
+            $("#contact_close_btn").click(function ()
+            {
+                $(modalContato).toggleClass("is-active")
+            })
+        })
+    </script>
+
+</body>
+</html>

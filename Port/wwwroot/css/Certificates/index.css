@@ -1,0 +1,64 @@
+﻿a:visited {
+    text-decoration: none;
+}
+
+#bredcrumb_certification_header {
+    font-size: 1.2em;
+}
+
+    #bredcrumb_certification_header li {
+        padding-bottom: 1.2em;
+        padding-top: 1.2em;
+        border-bottom: 2px solid var(--secondary-white);
+    }
+
+    #bredcrumb_certification_header a:hover {
+        color: var(--primary-green) !important;
+    }
+
+    #bredcrumb_certification_header a {
+        color: var(--secondary-white) !important;
+    }
+
+#introduction .card {
+    border-top-right-radius: 35px;
+    border-bottom-left-radius: 35px;
+}
+
+    #introduction .card:hover {
+        background-color: var(--primary-green-light);
+    }
+
+.modal_info {
+    position: relative;
+    top: -90px;
+    left: 65%;
+    z-index: 2;
+}
+
+.card-image {
+    margin-bottom: -192px;
+}
+
+#want_back_btn a {
+    color: black;
+}
+
+    #want_back_btn a:hover {
+        text-decoration: none;
+        color: var(--primary-green);
+    }
+
+    #want_back_btn a:visited {
+        text-decoration: none;
+    }
+
+#want_back_btn {
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
